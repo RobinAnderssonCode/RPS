@@ -7,7 +7,7 @@ var io = require('socket.io')(http);
 (function() {
     var userlist = {};
 
-    app.get('/', function(req, res) {
+    app.get('/public', function(req, res) {
         res.sendfile('index.html');
     });
 
@@ -34,14 +34,16 @@ var io = require('socket.io')(http);
 
         socket.on('disconnect', function() {
             console.log('user disconnected: ' + socket.id);
+            delete userlist[socket.id];
+            io.sockets.emit('connectUsers', userlist);
         });
     });
 
 
 
-    // http.listen(3000, function() {
-    //     console.log('listening on *:3000');
-    // });
-    https.listen(process.env.PORT || 3000);
+    http.listen(3000, function() {
+        console.log('listening on *:3000');
+    });
+    // https.listen(process.env.PORT || 3000);
 
 })();

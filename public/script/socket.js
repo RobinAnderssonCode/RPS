@@ -12,10 +12,11 @@ var socket = io();
 
     socket.on('connectUsers', function(users) {
         $('#connectUsers').html('');
+        var btn = '<button id="" class="btn btn-default">HEJ';
         for (key in users) {
             if (users.hasOwnProperty(key)) {
                 var value = users[key];
-                $('#connectUsers').append($('<li>').text(value).append('<button id="btn">HEJ'));
+                $('#connectUsers').append($('<li>').text(value).append(btn));
             }
         }
     });
