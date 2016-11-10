@@ -1,0 +1,172 @@
+/*
+Color scheme.
+#feffff  white
+#98dafc  blue
+#daad86  brownish
+#312c32  blackish
+
+#e6cf8b draw yellow
+#4CAF50 winner green
+#D32F2F loser red
+*/
+
+body {
+    background-color: #feffff;
+    /* light grey */
+    font-family: "VT323", monospace, "HelvetivaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #daad86;
+}
+
+h1,
+h2,
+h3,
+h4,
+h4,
+h6 {
+    padding: 10px;
+}
+
+h1 {
+    background-color: #004060;
+    color: #ffffff;
+    text-align: center;
+}
+
+a,
+a:visited {
+    color: #006699;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #004060;
+    color: #ffffff;
+    text-align: center;
+}
+
+#loginModal {
+    height: 100vh;
+    width: 100vh;
+    margin: 0 auto;
+}
+
+#usernameDiv {
+    margin: 0 auto;
+    width: 50%;
+}
+
+#findPlayerModal {
+    height: 100vh;
+    width: 100vh;
+    margin: 0 auto;
+}
+
+#container {
+    margin: 0 auto;
+}
+
+.blockList ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.blockList li {
+    float: left;
+    margin: 10px;
+}
+
+.blockList li img {
+    display: block;
+    margin: 10px 10px;
+}
+
+.resultScreen {
+    float: left;
+    position: relative;
+    height: 400px;
+    width: 350px;
+    text-align: center;
+    margin: 10px;
+    background-color: #312c32;
+}
+
+.resultScreen img {
+    float: none;
+    margin: 0 auto;
+}
+
+.weapon {
+    border: 5px solid white;
+}
+
+.weapon:hover {
+    border: 5px solid black;
+}
+
+.weapon img {
+    width: 200px;
+    height: 200px;
+}
+
+.weaponChoice {
+    width: 200px;
+    height: 200px;
+}
+
+#computerChoice {
+    float: none;
+    margin: 0 auto;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.thinkingScreen {
+    background-color: #455A64;
+    color: #312c32;
+}
+
+.winnerScreen {
+    background-color: #4CAF50;
+    color: #312c32;
+}
+
+.loserScreen {
+    background-color: #D32F2F;
+    color: #312c32;
+}
+
+.drawScreen {
+    background-color: #e6cf8b;
+    color: #312c32;
+}
+
+#stats {
+    background-color: #312c32;
+    float: left;
+}
+
+#gameCount {
+    position: relative;
+    float: left;
+}
+
+#drawCount {
+    position: relative;
+    float: right;
+}
+
+.clear {
+    clear: both;
+}

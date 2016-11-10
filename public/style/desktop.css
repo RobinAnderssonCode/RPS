@@ -1,0 +1,14 @@
+@media screen and (min-width: 800px) {
+	#container {
+		width: 800px;
+	}
+	.weapon {
+		width: 200px;
+	}
+
+	#stats {
+		width: 720px;
+		margin: 10px;
+	}
+
+}
