@@ -44,6 +44,7 @@ $(document).ready(function() {
 
             socket.on('join room', function(c) {
                 $('#findPlayerModal').css('display', 'none');
+                // socket.emit('leave room', )
             });
 
             });
