@@ -7,7 +7,7 @@ var io = require('socket.io')(http);
 (function() {
     var userlist = {};
 
-    app.get('/public', function(req, res) {
+    app.get('/', function(req, res) {
         res.sendfile('index.html');
     });
 
@@ -27,10 +27,24 @@ var io = require('socket.io')(http);
             io.sockets.emit('connectUsers', userlist);
         });
 
+        socket.on('challenge', function(c) {
+            console.log(c)
+            io.to(c[2]).emit('msg', c);
+        });
+
+        socket.on('accepted', function(c) {
+        	socket.join(c[1]);
+        	io.sockets.in(c[1]).emit('join room', c);
+        });
+
+        socket.on('room', function(room) {
+            socket.join(room);
+            console.log(room)
+        });
+
         socket.on('get weapon', function(w) {
             console.log('\nWEAPON CHOSEN: ' + w)
         });
-
 
         socket.on('disconnect', function() {
             console.log('user disconnected: ' + socket.id);
@@ -41,9 +55,9 @@ var io = require('socket.io')(http);
 
 
 
-    // http.listen(3000, function() {
-    //     console.log('listening on *:3000');
-    // });
-    https.listen(process.env.PORT || 3000);
+    http.listen(3000, function() {
+        console.log('listening on *:3000');
+    });
+    // https.listen(process.env.PORT || 3000);
 
 })();
