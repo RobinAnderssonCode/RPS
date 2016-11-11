@@ -7,7 +7,7 @@ var io = require('socket.io')(http);
 (function() {
     var userlist = {};
 
-    app.get('/', function(req, res) {
+    app.get('/public', function(req, res) {
         res.sendfile('index.html');
     });
 
