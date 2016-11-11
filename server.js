@@ -4,7 +4,7 @@ var path = require('path');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-(function() {
+//(function() {
     var userlist = {};
 
     app.get('/public', function(req, res) {
@@ -60,4 +60,4 @@ var io = require('socket.io')(http);
     //});
     https.listen(process.env.PORT || 3000);
 
-})();
+//})();
